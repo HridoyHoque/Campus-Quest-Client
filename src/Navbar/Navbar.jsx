@@ -8,11 +8,12 @@ const Navbar = () => {
     <li className="text-2xl"><Link to='/blog'>Colleges</Link></li>
     <li className="text-2xl"><Link to='/allToys'>Admission</Link></li>
     <li className="text-2xl"><Link to='/addToys'>My College</Link></li>
+    <li className="text-2xl"><Link to='/login'>Login</Link></li>
 
 </>
     return (
         <>
-            <div className="navbar bg-base-100 relative z-10">
+            <div className="navbar bg-base-100 relative z-10 lg:-mt-8 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -22,7 +23,7 @@ const Navbar = () => {
                            {NavItems}
                         </ul>
                     </div>
-                    <Link to='/' className=""><img height='107' width='107' src={logo} alt="" /></Link>
+                    <Link  to='/' className="mt-8"><img height='107' width='107' src={logo} alt="" /></Link>
                     <Link> <h2 className="text-4xl text-black">Campus<span className="text-indigo-700">Quest</span></h2></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
