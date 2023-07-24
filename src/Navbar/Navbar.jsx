@@ -1,16 +1,29 @@
 import { Link } from "react-router-dom";
 import logo from '/CampusQuest.png'
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProviders";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
+    const handleLogout = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+            toast.success('Logged Out');
+    }
 
     const NavItems = <>
     <li className="text-2xl"><Link to='/'>Home</Link></li>
     <li className="text-2xl"><Link to='/blog'>Colleges</Link></li>
     <li className="text-2xl"><Link to='/allToys'>Admission</Link></li>
     <li className="text-2xl"><Link to='/addToys'>My College</Link></li>
-    <li className="text-2xl"><Link to='/login'>Login</Link></li>
+    {user
+            ? <button onClick={handleLogout} className="btn btn-outline btn-error">Logout</button> : <li className="text-2xl"><Link to='/login'>login</Link></li>}
 
 </>
+
+
     return (
         <>
             <div className="navbar bg-base-100 relative z-10 lg:-mt-8 ">
@@ -35,7 +48,7 @@ const Navbar = () => {
                     <a className="btn">Button</a>
                 </div> */}
             </div>
-
+            <Toaster />
         </>
     );
 };
