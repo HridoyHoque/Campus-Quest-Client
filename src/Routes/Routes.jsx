@@ -5,6 +5,7 @@ import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import Colleges from "../Pages/Colleges/Colleges";
 import SingleCollege from "../Pages/SingleCollege/SingleCollege";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path: '*',
+      element: <ErrorPage></ErrorPage>
+  }
   ]);
 
   export default router;
