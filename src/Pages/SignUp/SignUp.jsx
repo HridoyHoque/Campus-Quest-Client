@@ -1,13 +1,35 @@
-
-// import { useContext } from "react";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../providers/AuthProviders";
 import { Link, useNavigate } from "react-router-dom";
-// import { AuthContext } from "../../Providers/AuthProvider";
+import { toast } from "react-toastify";
+import SocialLogin from "../SocialLogin/SocialLogin";
+import { Toaster } from "react-hot-toast";
+
 
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    // const { createUser, updateUserProfile } = useContext(AuthContext);
-    // const navigate = useNavigate()
+    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate()
+    const onSubmit = data => {
+        if (data.password !== data.confirmPassword) {
+            toast.error('Password and confirm password did not match')
+            return;
+        }
+        createUser(data.email, data.password)
+            .then(result => {
+                updateUserProfile(data.name, data.photo)
+                    .then(() => {
+                    console.log(result.user);
+                        toast.success('Successfully created an account!')
+                        navigate('/')
+                    })
+                    .catch(err => {
+                        console.log(err.message)
+                    })
+
+            });
+    }
     return (
         <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
@@ -17,7 +39,7 @@ const SignUp = () => {
                 </div>
             </div>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                <form className="card-body">
+                <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                     <h1 className="text-center mb-3 text-5xl font-bold">Signup now!</h1>
                     <div className="form-control">
                         <label className="label">
@@ -61,8 +83,8 @@ const SignUp = () => {
                         <p className="mt-1">Already have an account? <Link to='/login' className="text-blue-400">Login Now</Link> </p>
                     </div>
                 </form>
-                {/* <SocialLogin></SocialLogin> */}
-                {/* <Toaster /> */}
+              <SocialLogin />
+         <Toaster />
             </div>
         </div>
     </div>
