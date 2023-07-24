@@ -3,12 +3,12 @@ import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 
 const PhotoGallery = () => {
     const images = [
-        "https://i.ibb.co/23TJ2v0/campus2.png",
-        "https://i.ibb.co/23TJ2v0/campus2.png",
-        "https://i.ibb.co/23TJ2sv0/campus2.png",
-        "https://i.ibb.co/2PwNzvB/group-students-posing-table.jpg",
-        "https://i.ibb.co/6g9Vc4p/college-graduates-celebration.jpg",
-        "https://i.ibb.co/6g9Vc4p/college-graduates-celebration.jpg",
+        "https://i.ibb.co/QjFC2M6/graduate1.png",
+        "https://i.ibb.co/d0BCFrw/graduate2.png",
+        "https://i.ibb.co/86n8p2y/graduate3.png",
+        "https://i.ibb.co/ZS5vWMF/graduate4.png",
+        "https://i.ibb.co/hLs9FBz/graduate5.png",
+        "https://i.ibb.co/4tSdY5c/graduate6.png",
         // Add more image URLs here...
       ];
 
