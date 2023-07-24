@@ -6,7 +6,7 @@ const TopColleges = () => {
     const [topColleges, setTopColleges] = useState([]);
 
     useEffect(() => {
-        fetch('/topcolleges.json')
+        fetch('http://localhost:5000/colleges')
         .then(response => response.json())
         .then(data => setTopColleges(data))
     })
