@@ -8,7 +8,10 @@ const TopColleges = () => {
     useEffect(() => {
         fetch('http://localhost:5000/colleges')
         .then(response => response.json())
-        .then(data => setTopColleges(data))
+        .then(data => {
+            const topColleges = data.slice(0,3)
+            setTopColleges(topColleges)
+        })
     })
     return (
       <>
