@@ -12,10 +12,6 @@ const SignUp = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate()
     const onSubmit = data => {
-        if (data.password !== data.confirmPassword) {
-            toast.error('Password and confirm password did not match')
-            return;
-        }
         createUser(data.email, data.password)
             .then(result => {
                 updateUserProfile(data.name, data.photo)

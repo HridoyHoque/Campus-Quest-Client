@@ -23,7 +23,7 @@ const SocialLogin = () => {
         <div className='-mt-8'>
         <div className="divider">OR</div>
         <div className='w-full text-center mt-1 '>
-            <button onClick={handleGoogleSignIn} className="btn btn-outline bg-slate-100 border-0 border-b-4 border-l-4 mb-2"><FcGoogle /></button>
+            <button onClick={handleGoogleSignIn} className="btn btn-outline btn-info bg-slate-100 border-0 border-b-4 border-l-4 mb-2"><FcGoogle /></button>
         </div>
         <Toaster />
     </div>

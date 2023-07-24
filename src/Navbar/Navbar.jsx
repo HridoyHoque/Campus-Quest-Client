@@ -15,7 +15,7 @@ const Navbar = () => {
 
     const NavItems = <>
     <li className="text-2xl"><Link to='/'>Home</Link></li>
-    <li className="text-2xl"><Link to='/blog'>Colleges</Link></li>
+    <li className="text-2xl"><Link to='/colleges'>Colleges</Link></li>
     <li className="text-2xl"><Link to='/allToys'>Admission</Link></li>
     <li className="text-2xl"><Link to='/addToys'>My College</Link></li>
     {user
@@ -28,7 +28,7 @@ const Navbar = () => {
         <>
             <div className="navbar bg-base-100 relative z-10 lg:-mt-8 ">
                 <div className="navbar-start">
-                    <div className="dropdown">
+                    <div className="dropdown ">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
@@ -36,7 +36,7 @@ const Navbar = () => {
                            {NavItems}
                         </ul>
                     </div>
-                    <Link  to='/' className="mt-8"><img height='107' width='107' src={logo} alt="" /></Link>
+                    <Link  to='/' className="mt-8 hidden lg:block"><img height='107' width='107' src={logo} alt="" /></Link>
                     <Link> <h2 className="text-4xl text-black">Campus<span className="text-indigo-700">Quest</span></h2></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
