@@ -6,7 +6,7 @@ const TopColleges = () => {
     const [topColleges, setTopColleges] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/colleges')
+        fetch('https://campus-quest-server.vercel.app/colleges')
         .then(response => response.json())
         .then(data => {
             const topColleges = data.slice(0,3)

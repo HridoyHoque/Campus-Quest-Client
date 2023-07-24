@@ -7,6 +7,8 @@ import Colleges from "../Pages/Colleges/Colleges";
 import SingleCollege from "../Pages/SingleCollege/SingleCollege";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Admission from "../Pages/Admission/Admission";
+import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
+import MyColleges from "../Pages/MyColleges/MyColleges";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +30,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/admission',
-        element: <Admission />
+        element: <PrivateRoutes> <Admission /></PrivateRoutes>
+      },
+      {
+        path: '/myCollege',
+        element: <PrivateRoutes><MyColleges /></PrivateRoutes>
       },
       {
         path: '/colleges',
@@ -37,7 +43,7 @@ const router = createBrowserRouter([
       {
         path: '/SingleColleges/:id',
         element: <SingleCollege />,
-        loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
+        loader: ({ params }) => fetch(`https://campus-quest-server.vercel.app/s/colleges/${params.id}`)
       }
     ]
   },

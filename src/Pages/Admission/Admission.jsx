@@ -18,7 +18,7 @@ const Admission = () => {
         const admissionData = { collegeName, candidateName, photo, Birth, address, phoneNumber, email, subject }
 
         // send data to the server
-        fetch("http://localhost:5000/admission", {
+        fetch("https://campus-quest-server.vercel.app//admission", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -30,6 +30,7 @@ const Admission = () => {
                 console.log(data)
                 if (data.insertedId) {
                     toast.success('Successfully submitted the form')
+                    form.reset
                 }
             })
 

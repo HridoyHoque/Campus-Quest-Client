@@ -17,7 +17,7 @@ const Navbar = () => {
     <li className="text-2xl"><Link to='/'>Home</Link></li>
     <li className="text-2xl"><Link to='/colleges'>Colleges</Link></li>
     <li className="text-2xl"><Link to='/admission'>Admission</Link></li>
-    <li className="text-2xl"><Link to='/addToys'>My College</Link></li>
+    <li className="text-2xl"><Link to='/myCollege'>My College</Link></li>
     {user
             ? <button onClick={handleLogout} className="btn btn-outline btn-error">Logout</button> : <li className="text-2xl"><Link to='/login'>login</Link></li>}
 
